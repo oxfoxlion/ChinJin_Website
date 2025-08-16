@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+@theme {
+    /* 設定一個自訂字體 token，可用 class: font-noto */
+    --font-noto: "Noto Sans TC", "Noto Sans TC Placeholder", sans-serif;
+
+    /* 也可以把預設 sans 換成 Noto Sans TC，之後用 font-sans 即可 */
+    --font-sans: var(--font-noto);
+}
+
+body {
+  font-family: "Noto Sans TC", "Noto Sans TC Placeholder", sans-serif;
+}
+
 .container {
-    @apply px-[10%] py-3 mx-auto;
+    @apply py-[2.5rem] mx-auto;
 }
