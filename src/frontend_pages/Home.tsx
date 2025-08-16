@@ -1,5 +1,7 @@
 export default function Home(){
     return (
-        <>Home</>
+        <main className="container">
+            Home
+        </main>
     )
 }

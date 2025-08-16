@@ -7,6 +7,7 @@ import Home from "./frontend_pages/Home";
 import About from "./frontend_pages/About";
 import Contact from "./frontend_pages/Contact";
 import Products from "./frontend_pages/Products";
+import Blog from "./frontend_pages/Blog";
 
 import Login from "./backend_pages/Login";
 import Dashboard from "./backend_pages/Dashboard";
@@ -27,6 +28,9 @@ export const route = createBrowserRouter([
         },{
             path:'contact',
             element:<Contact></Contact>
+        },{
+            path:'blog',
+            element:<Blog></Blog>
         }]
     },{
         path:'/admin',
