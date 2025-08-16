@@ -1,5 +1,5 @@
 export default function Products(){
     return (
-        <>Products</>
+        <main className="container">Products</main>
     )
 }

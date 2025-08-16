@@ -1,5 +1,5 @@
 export default function Contact(){
     return (
-        <>Contact</>
+        <main className="container">Contact</main>
     )
 }
