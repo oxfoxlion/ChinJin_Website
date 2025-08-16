@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom"
 export default function Footer() {
     return (
-        <footer className="bg-[#000000] py-[1rem]">
+        <footer className="bg-zinc-900">
             <div className="container flex justify-between">
                 <div className="text-[#FFFFFF]">
                     <h3 className="mb-3 "><NavLink to='/' className="text-2xl font-bold">群晉材料科技</NavLink></h3>
