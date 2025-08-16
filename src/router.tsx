@@ -8,6 +8,7 @@ import About from "./frontend_pages/About";
 import Contact from "./frontend_pages/Contact";
 import Products from "./frontend_pages/Products";
 import Blog from "./frontend_pages/Blog";
+import NotFound from "./frontend_pages/NotFound";
 
 import Login from "./backend_pages/Login";
 import Dashboard from "./backend_pages/Dashboard";
@@ -42,5 +43,10 @@ export const route = createBrowserRouter([
             path:'login',
             element:<Login></Login>
         }]
+    },{
+            path:'*',
+            element:<NotFound></NotFound>
     }
-])
+],{
+    basename: import.meta.env.BASE_URL,
+  })

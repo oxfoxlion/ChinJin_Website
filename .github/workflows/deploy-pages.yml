@@ -2,7 +2,7 @@ name: Deploy - GitHub Pages (Vite)
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   workflow_dispatch:
 
 permissions:
@@ -19,14 +19,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      # 建議加上，讓 Pages 正確初始化（artifact 等設定）
+      - uses: actions/configure-pages@v5
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
+
       - run: npm ci
       - run: npm run build
-      # React Router 等前端路由避免重新整理 404
-      - run: cp dist/index.html dist/404.html
+
+      # ⭐ SPA fallback：避免子路徑重新整理 404
+      - name: Create 404 fallback
+        run: cp dist/index.html dist/404.html
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
@@ -38,5 +46,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - id: deployment
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
