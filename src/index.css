@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+/* === 全域 Design Tokens === */
+@theme {
+  /* 字體設定 */
+  --font-noto: "Noto Sans TC", "Noto Sans TC Placeholder", sans-serif;
+  --font-sans: var(--font-noto);
+
+  /* 品牌色票 */
+  --color-brand-yellow: #FACC15; /* 主色 黃 */
+  --color-brand-dark: #18181B;   /* 深灰 (Header / Footer) */
+  --color-brand-light: #F4F4F5;  /* 淺灰 (區塊背景) */
+  --color-brand-blue: #2563EB;   /* 科技藍 (點綴) */
+
+  /* 文字顏色層級 */
+  --color-text-primary: #1F2937; /* gray-800 */
+  --color-text-secondary: #4B5563; /* gray-600 */
+  --color-text-muted: #9CA3AF; /* gray-400 */
+}
+
+/* === 全域 Reset 與排版 === */
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+/* 統一 container 樣式 */
+.container {
+  @apply py-[2.8rem] mx-auto px-6;
+}
+
+/* 共用按鈕樣式 (可直接複用) */
+.btn-primary {
+  @apply rounded-lg px-6 py-3 font-semibold transition;
+  background-color: var(--color-brand-yellow);
+  color: black;
+}
+.btn-primary:hover {
+  background-color: var(--color-brand-dark);
+  color: var(--color-brand-yellow);
+}
